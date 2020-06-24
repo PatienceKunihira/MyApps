@@ -1,0 +1,29 @@
+
+doctype html
+html
+    head
+        link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+    body
+        h2 Welcome #{user.firstName}
+        form(method="post" action="/logout")
+            button.btn.btn-dark.btn-block(type="submit") Log out
+        p Here is your information
+        form(method="post" action="/register/update")
+            table.table
+                thead.thead-dark
+                    tr
+                        th First name 
+                        td 
+                            input.form-control(value = user.firstName name="firstName")
+                    tr
+                        th Other name 
+                        td 
+                            input.form-control(value = user.othername name="othername")
+                    tr
+                        th Password
+                        td 
+                            input.form-control(value = user.password name="password")
+                   
+                    tr 
+                        td(colspan="2")
+                            button.btn.btn-dark.btn-block(type="submit") Update

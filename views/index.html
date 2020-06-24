@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My APP</title>
+      <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+      <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <h1>Register</h1>
+    <form method="post" action="/register">
+  <div class="info">
+        <legend>Personal information</legend>
+      </div>
+      <div class="form- row">
+        <div class="form-group" col-md-4>
+          <label for="name">First name</label>
+          <input type="text" class="form-control" id="fnameid" name="firstName" placeholder="fname" required>
+        </div>
+
+        <div class="form-group" col-md-4>
+          <label for="name">Other name</label>
+          <input type="text" class="form-control" id="oName" name="othername" placeholder="othername" required>
+        </div>
+
+        <div class="form-group" col-md-4>
+          <label for="name">Password</label>
+          <input type="password" class="form-control" id="fnameid" name="password" placeholder=""  required>
+        </div>
+
+        <div class="form-group" col-md-4>
+            <label for="">Role</label>
+            <label ><input type="radio" name="role" value="customer" required>Customer</label>
+            <label ><input type="radio" name="role" value="admin" required>Admin</label>
+        </div>
+         
+
+        <input type="submit" value="Addname">
+    </form>
+  </body>
+</html>

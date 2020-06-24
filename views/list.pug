@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+        title List of users
+    body
+        div.form-row
+            div   
+                form.search(action='/user/userlist')
+                    div.form-row
+                        div.col-md-8
+                            input.form-control(name='firstName' placeholder="Enter your search term ...")
+                        div.col-md-4
+                            input.btn.btn-dark.btn-block(type="submit")
+                    div.col.form-group.col-md-3
+                        form(method="post" action='/logout')
+                            button.btn.btn-dark.btn-block(type="submit") Log out        
+        table.table
+            thead.thead-dark
+                tr
+                    th firstname
+                    th othername
+                    th password
+            tbody
+                each user in users
+                    tr
+                        td #{user.firstName}
+                        td #{user.othername}
+                        td #{user.password}
+                        td
+                         form(action="/register/delete", method="post")
+                            div.form-row
+                                div.col-md-6
+                                    input(type="hidden", placeholder="", name="id", value= user._id)
+                                    button.btn.btn-dark.btn-block(type="submit") Delete 
+                               
